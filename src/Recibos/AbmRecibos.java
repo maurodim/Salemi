@@ -476,7 +476,7 @@ public class AbmRecibos extends javax.swing.JDialog {
         Iterator iEl=aEliminar.listIterator();
         int orden=0;
         while(iEl.hasNext()){
-            orden=(int)iEl.next();
+            orden=(Integer)iEl.next();
             listadoFc.remove(orden);
         }
         

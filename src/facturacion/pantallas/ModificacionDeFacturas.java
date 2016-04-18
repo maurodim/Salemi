@@ -652,9 +652,9 @@ public class ModificacionDeFacturas extends javax.swing.JInternalFrame {
         String fecha2=ano+"-"+mes+"-"+dia;
         //comp.setFechaComprobante(fecha2);
         //comp.setFechaComprobante(fecha);
-        int comprobanteTipo=(int) Inicio.sucursal.getTipoComprobantes().get(0);
+        Integer comprobanteTipo=(Integer) Inicio.sucursal.getTipoComprobantes().get(0);
         //System.out.println("COMPROBANTEEEEEEE "+comprobanteTipo);
-        if(cliT.getCondicionIva().equals("RI "))comprobanteTipo=(int)Inicio.sucursal.getTipoComprobantes().get(1);
+        if(cliT.getCondicionIva().equals("RI "))comprobanteTipo=(Integer)Inicio.sucursal.getTipoComprobantes().get(1);
         Comprobantes comprobante=new Comprobantes();
         comprobante.setCliente(cliT);
         comprobante.setTipoMovimiento(1);
