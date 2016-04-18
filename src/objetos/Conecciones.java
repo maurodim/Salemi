@@ -34,7 +34,7 @@ import java.util.logging.Logger;
  */
 public class Conecciones implements Transaccionable{
     private Connection con;
-    private PreparedStatement st;
+    private Statement st;
     private String usuario;
     private String base;
     private String pass;
@@ -106,8 +106,8 @@ public class Conecciones implements Transaccionable{
             tt.guardarRegistro(ss);
             Inicio.coneccionRemota=false;
             }else{
-             st=con.prepareStatement(sql);   
-            st.executeUpdate();
+             st=con.createStatement();   
+            st.executeUpdate(sql);
             Inicio.coneccionRemota=true;
             }
             //this.st.executeQuery(sql);
@@ -177,9 +177,9 @@ public class Conecciones implements Transaccionable{
             }else{
              */
             //System.out.println("ERROR EN SENTENCIA "+sql);
-            st=con.prepareStatement(sql);
-            st.execute();
-            rs=st.getResultSet();
+            st=con.createStatement();
+            rs=st.executeQuery(sql);
+            //rs=st.getResultSet();
             //}
         } catch (SQLException ex) {
             Inicio.coneccionRemota=false;
