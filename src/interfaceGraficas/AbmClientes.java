@@ -13,6 +13,7 @@ import facturacion.pantallas.IngresoDeFacturas;
 import Pedidos.IngresoDePedidos;
 import interfacesPrograma.Busquedas;
 import interfacesPrograma.Facturar;
+import java.awt.event.KeyEvent;
 import java.beans.PropertyVetoException;
 import java.io.File;
 import java.sql.SQLException;
@@ -23,6 +24,7 @@ import java.util.Calendar;
 import java.util.Iterator;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.swing.table.DefaultTableModel;
 import javax.swing.table.TableColumn;
 import tablas.MiModeloTablaArticulos;
 import tablas.MiModeloTablaBuscarCliente;
@@ -39,8 +41,11 @@ public class AbmClientes extends javax.swing.JInternalFrame {
      */
     public AbmClientes() {
         initComponents();
-        columnaCodigo=this.jTable1.getColumn("COD CLIENTE");
-        columnaCodigo.setPreferredWidth(30);
+        //Busquedas bus=new facturacion.clientes.Clientes();
+        //listadoClientes=bus.listar("");
+        //cargarTabla();
+        //columnaCodigo=this.jTable1.getColumn("COD CLIENTE");
+        //columnaCodigo.setPreferredWidth(30);
     }
 
     /**
@@ -104,9 +109,12 @@ public class AbmClientes extends javax.swing.JInternalFrame {
             }
         });
 
+        /*
         MiModeloTablaArticulos miTabla=new MiModeloTablaArticulos();
         Busquedas bus=new facturacion.clientes.Clientes();
         listadoClientes=bus.listar("");
+        //cargarTabla();
+
         Iterator listC=listadoClientes.listIterator();
         miTabla.addColumn("COD CLIENTE");
         miTabla.addColumn("RAZON SOCIAL");
@@ -132,16 +140,22 @@ public class AbmClientes extends javax.swing.JInternalFrame {
             fila[8]=cliente.getCondicionIva();
             miTabla.addRow(fila);
         }
-        jTable1.setModel(miTabla);
+        jTable1.setModel(busC);
         columnaCodigo=this.jTable1.getColumn("COD CLIENTE");
         columnaCodigo.setPreferredWidth(30);
+        */
         jScrollPane1.setViewportView(jTable1);
 
-        jLabel1.setText("Buscar por Nombre - Contacto - Nombre de Fantasía");
+        jLabel1.setText("Buscar por Nombre - Contacto - direccion  Presione F1 para buscar");
 
         jTextField1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jTextField1ActionPerformed(evt);
+            }
+        });
+        jTextField1.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                jTextField1KeyPressed(evt);
             }
         });
 
@@ -184,31 +198,36 @@ public class AbmClientes extends javax.swing.JInternalFrame {
                         .addGap(18, 18, 18)
                         .addComponent(dateChooserCombo3, javax.swing.GroupLayout.PREFERRED_SIZE, 134, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 81, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(16, 16, 16)
+                        .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 56, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(dateChooserCombo4, javax.swing.GroupLayout.PREFERRED_SIZE, 133, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 149, Short.MAX_VALUE)))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jButton3)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 25, Short.MAX_VALUE)))
                 .addContainerGap())
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 308, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 48, Short.MAX_VALUE)
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 18, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                        .addComponent(jLabel3)
-                        .addComponent(dateChooserCombo3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(jLabel4)
-                        .addComponent(dateChooserCombo4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(16, 16, 16))
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 308, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 48, Short.MAX_VALUE)
+                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 18, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                .addComponent(jLabel3)
+                                .addComponent(dateChooserCombo3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(jLabel4)
+                                .addComponent(dateChooserCombo4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                .addGap(26, 26, 26))
         );
 
         jMenu1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagen/folder_new.png"))); // NOI18N
@@ -225,8 +244,8 @@ public class AbmClientes extends javax.swing.JInternalFrame {
         });
         jMenuBar1.add(jMenu1);
 
-        jMenu2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagen/currency_black_dollar.png"))); // NOI18N
-        jMenu2.setText("Saldo");
+        jMenu2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagen/List.png"))); // NOI18N
+        jMenu2.setText("Hoja de Servicios");
         jMenuBar1.add(jMenu2);
 
         jMenu5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagen/metacontact_offline.png"))); // NOI18N
@@ -253,7 +272,7 @@ public class AbmClientes extends javax.swing.JInternalFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 46, Short.MAX_VALUE))
+                .addGap(0, 50, Short.MAX_VALUE))
         );
 
         pack();
@@ -320,40 +339,10 @@ public class AbmClientes extends javax.swing.JInternalFrame {
     }//GEN-LAST:event_formFocusGained
 
     private void formInternalFrameActivated(javax.swing.event.InternalFrameEvent evt) {//GEN-FIRST:event_formInternalFrameActivated
-                 this.jTable1.removeAll();
-        MiModeloTablaArticulos miTabla=new MiModeloTablaArticulos();
-Busquedas bus=new Clientes();
-listadoClientes=bus.listar("");
-Iterator listC=listadoClientes.listIterator();
-miTabla.addColumn("COD CLIENTE");
-miTabla.addColumn("RAZON SOCIAL");
-miTabla.addColumn("DIRECCION");
-miTabla.addColumn("TELEFONO");
-miTabla.addColumn("LOCALIDAD");
-miTabla.addColumn("CONTACTO");
-miTabla.addColumn("NOM. FANTASIA");
-miTabla.addColumn("CELULAR");
-miTabla.addColumn("COND IVA");
-
-Object[] fila=new Object[9];
-Clientes cliente=new Clientes();
-while(listC.hasNext()){
-    cliente=(Clientes)listC.next();
-    fila[0]=cliente.getCodigoId();
-fila[1]=cliente.getRazonSocial();
-fila[2]=cliente.getDireccion();
-fila[3]=cliente.getTelefono();
-fila[4]=cliente.getLocalidad();
-fila[5]=cliente.getResponsable();
-fila[6]=cliente.getFantasia();
-fila[7]=cliente.getCelular();
-fila[8]=cliente.getCondicionIva();
-miTabla.addRow(fila);
-}
-
-jTable1.setModel(miTabla);
-columnaCodigo=this.jTable1.getColumn("COD CLIENTE");
-        columnaCodigo.setPreferredWidth(30);
+                 //this.jTable1.removeAll();
+                 Busquedas bus=new facturacion.clientes.Clientes();
+                 listadoClientes=bus.listar("");
+        cargarTabla();
     }//GEN-LAST:event_formInternalFrameActivated
 
     private void formKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_formKeyPressed
@@ -365,7 +354,7 @@ columnaCodigo=this.jTable1.getColumn("COD CLIENTE");
     }//GEN-LAST:event_formKeyPressed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-                String nombre=jTextField1.getText();
+        String nombre=jTextField1.getText();
         Clientes resCli=new Clientes();
         Busquedas mcli=new Clientes();
         listadoClientes.clear();
@@ -393,8 +382,25 @@ columnaCodigo=this.jTable1.getColumn("COD CLIENTE");
         clienteNuevo.setVisible(true);
         clienteNuevo.toFront();
     }//GEN-LAST:event_jMenu5MouseClicked
+
+    private void jTextField1KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTextField1KeyPressed
+        if(evt.getKeyCode()==KeyEvent.VK_F1){
+            String nombre=jTextField1.getText();
+        Clientes resCli=new Clientes();
+        Busquedas mcli=new Clientes();
+        listadoClientes.clear();
+        //ArrayList resultado=new ArrayList();
+        listadoClientes=mcli.listar(nombre.toUpperCase());
+        int cant=listadoClientes.size();
+        //Iterator ir=resultado.listIterator();
+        //this.jPanel2.setVisible(true);
+        cargarTabla();
+        //this.jList1.setModel(modelo);
+        }
+    }//GEN-LAST:event_jTextField1KeyPressed
 private void cargarTabla(){
-        MiModeloTablaBuscarCliente busC=new MiModeloTablaBuscarCliente();
+        //MiModeloTablaBuscarCliente busC=new MiModeloTablaBuscarCliente();
+    DefaultTableModel busC=new DefaultTableModel();
         this.jTable1.removeAll();
         //ArrayList listadoPedidos=new ArrayList();
         
@@ -404,11 +410,9 @@ busC.addColumn("RAZON SOCIAL");
 busC.addColumn("DIRECCION");
 busC.addColumn("TELEFONO");
 busC.addColumn("LOCALIDAD");
-busC.addColumn("CONTACTO");
-busC.addColumn("NOM. FANTASIA");
 busC.addColumn("CELULAR");
 busC.addColumn("COND IVA");
-Object[] fila=new Object[9];
+Object[] fila=new Object[7];
 Iterator irP=listadoClientes.listIterator();
 while(irP.hasNext()){
     pedidos=(Clientes) irP.next();
@@ -417,40 +421,14 @@ fila[1]=pedidos.getRazonSocial();
 fila[2]=pedidos.getDireccion();
 fila[3]=pedidos.getTelefono();
 fila[4]=pedidos.getLocalidad();
-fila[5]=pedidos.getResponsable();
-fila[6]=pedidos.getFantasia();
-fila[7]=pedidos.getCelular();
-fila[8]=pedidos.getCondicionIva();
+fila[5]=pedidos.getCelular();
+fila[6]=pedidos.getCondicionIva();
 busC.addRow(fila);
 }
 this.jTable1.setModel(busC);
 columnaCodigo=this.jTable1.getColumn("COD CLIENTE");
         columnaCodigo.setPreferredWidth(30);
-      /*  
-        Clientes pedidos=new Clientes();
-        busC.addColumn("CODIGO CLIENTE");
-        busC.addColumn("RAZON SOCIAL");
-        busC.addColumn("DIRECCION");
-        busC.addColumn("RESPONSABLE");
-        busC.addColumn("TELEFONO");
-        busC.addColumn("LOCALIDAD");
-        busC.addColumn("LISTA DE PRECIOS");
-        busC.addColumn("FORMA DE PAGO");
-        Object[] fila=new Object[8];
-        Iterator irP=listadoClientes.listIterator();
-        while(irP.hasNext()){
-            pedidos=(Clientes) irP.next();
-            fila[0]=pedidos.getCodigoCliente();
-            fila[1]=pedidos.getRazonSocial();
-            fila[2]=pedidos.getDireccion();
-            fila[3]=pedidos.getResponsable();
-            fila[4]=pedidos.getTelefono();
-            fila[5]=pedidos.getLocalidad();
-            fila[6]=pedidos.getListaDePrecios();
-            fila[7]=pedidos.getCondicionDeVenta();
-            busC.addRow(fila);
-        }
-        */
+      
 
 }
 

@@ -20,9 +20,14 @@ import java.util.Date;
 import java.util.Enumeration;
 import java.util.Hashtable;
 import java.util.Iterator;
+import java.util.List;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.persistence.EntityManager;
+import javax.persistence.EntityManagerFactory;
+import javax.persistence.Persistence;
+import javax.persistence.Query;
 import objetos.Comprobantes;
 import objetos.ConeccionLocal;
 import objetos.Conecciones;
@@ -217,6 +222,19 @@ public class Clientes implements Busquedas,Facturar,Adeudable{
             //System.out.println("CLIENTES "+sql);
             //String sql="select pedidos_carga1.COD_CLIENT,pedidos_carga1.RAZON_SOC,pedidos_carga1.NRO_PEDIDO,pedidos_carga1.numero,pedidos_carga1.LEYENDA_2 from pedidos_carga1 where RAZON_SOC like '"+cliente+"%' group by COD_CLIENT order by RAZON_SOC";
             rs=tra.leerConjuntoDeRegistros(sql);
+            
+            
+            /*
+            EntityManager em;
+            EntityManagerFactory emf=Persistence.createEntityManagerFactory("SalemiGestionPU");
+            em=emf.createEntityManager();
+            Query query=em.createQuery("select c from clientes c");
+            List<entity.Clientes> lista=query.getResultList();
+            
+            em.close();
+            */
+            
+            
             try{
                 listadoClientes.clear();
                 listadoPorNom.clear();
@@ -587,7 +605,7 @@ public class Clientes implements Busquedas,Facturar,Adeudable{
         ArrayList ped=new ArrayList();
             Clientes cli=null;
             
-            String sql="select id,clientes.fax,dentrega,clientes.direccionfantasia,(select condicionesiva.tipocomprobante from condicionesiva where condicionesiva.id=clientes.tipo_iva)as tipocomprobante,clientes.email,clientes.celular,clientes.COD_CLIENT,clientes.fantasia,clientes.RAZON_SOCI,clientes.DOMICILIO,clientes.COND_VTA,(clientes.LISTADEPRECIO)as NRO_LISTA,(select coeficienteslistas.coeficiente from coeficienteslistas where coeficienteslistas.id=clientes.listadeprecio)as descuento,(clientes.NUMERODECUIT)as IDENTIFTRI,clientes.empresa,clientes.TELEFONO_1,clientes.coeficiente,(clientes.CUPODECREDITO) AS CUPO_CREDI,clientes.saldo,clientes.TIPO_IVA,(select condicionesiva.descripcion from condicionesiva where id=clientes.tipo_iva)as tipo_iva2,(select localidades.localidad from localidades where id=clientes.localidad)as localidad1,clientes.responsable,(select localidades.codigo_postal from localidades where id=clientes.localidad)as postal from clientes where razon_soci like '%"+cliente+"%' or responsable like '%"+cliente+"%' or fantasia like '%"+cliente+"%' order by razon_soci";
+            String sql="select id,clientes.fax,dentrega,clientes.direccionfantasia,(select condicionesiva.tipocomprobante from condicionesiva where condicionesiva.id=clientes.tipo_iva)as tipocomprobante,clientes.email,clientes.celular,clientes.COD_CLIENT,clientes.fantasia,clientes.RAZON_SOCI,clientes.DOMICILIO,clientes.COND_VTA,(clientes.LISTADEPRECIO)as NRO_LISTA,(select coeficienteslistas.coeficiente from coeficienteslistas where coeficienteslistas.id=clientes.listadeprecio)as descuento,(clientes.NUMERODECUIT)as IDENTIFTRI,clientes.empresa,clientes.TELEFONO_1,clientes.coeficiente,(clientes.CUPODECREDITO) AS CUPO_CREDI,clientes.saldo,clientes.TIPO_IVA,(select condicionesiva.descripcion from condicionesiva where id=clientes.tipo_iva)as tipo_iva2,(select localidades.localidad from localidades where id=clientes.localidad)as localidad1,clientes.responsable,(select localidades.codigo_postal from localidades where id=clientes.localidad)as postal from clientes where razon_soci like '%"+cliente+"%' or responsable like '%"+cliente+"%' or DOMICILIO like '%"+cliente+"%' order by razon_soci";
             rs=tra.leerConjuntoDeRegistros(sql);
             try {
                 while(rs.next()){
@@ -782,10 +800,30 @@ public class Clientes implements Busquedas,Facturar,Adeudable{
     public Boolean guardarNuevoCliente(Object cliente) {
         Clientes cli=(Clientes)cliente;
         Boolean resultado=false;
+        /*
+        entity.Clientes clienteB=new entity.Clientes();
+        clienteB.setCodClient(cli.getCodigoCliente());
+        clienteB.setDomicilio(cli.getDireccion());
+        clienteB.setDentrega(cli.getDireccionDeEntrega());
+        clienteB.setRazonSoci(cli.getRazonSocial());
+        clienteB.setCodClient(cli.getCodigoCliente());
+        clienteB.setResponsable(cli.getResponsable());
+        clienteB.setFantasia(cli.getFantasia());
+        EntityManager em;
+        EntityManagerFactory emf;
+        emf=Persistence.createEntityManagerFactory("SalemiGestionPU");
+        em=emf.createEntityManager();
+        em.getTransaction().begin();
+        em.persist(clienteB);
+        em.flush();
+        em.getTransaction().commit();
         
+        resultado= true;
+        */
         String sql="insert into clientes (COD_CLIENT,RAZON_SOCI,DOMICILIO,TELEFONO_1,TIPO_IVA,NUMERODECUIT,COND_VTA,LISTADEPRECIO,empresa,cupodecredito,coeficiente,responsable,fantasia,celular,localidad,fax,direccionfantasia,email,dentrega) values ('"+cli.getCodigoCliente()+"','"+cli.getRazonSocial()+"','"+cli.getDireccion()+"','"+cli.getTelefono()+"','"+cli.getTipoIva()+"','"+cli.getNumeroDeCuit()+"',1,"+cli.getListaDePrecios()+",'"+cli.getEmpresa()+"',"+cli.getCupoDeCredito()+","+cli.getCoeficienteListaDeprecios()+",'"+cli.getResponsable()+"','"+cli.getFantasia()+"','"+cli.getCelular()+"','"+cli.getLocalidad()+"','"+cli.getFax()+"','"+cli.getDireccionFantasia()+"','"+cli.getEmail()+"','"+cli.getDireccionDeEntrega()+"')";
         System.out.println(sql);
         resultado=tra.guardarRegistro(sql);
+        
         cargarMap();
         return resultado;
     }

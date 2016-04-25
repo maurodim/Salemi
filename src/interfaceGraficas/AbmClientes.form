@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 
-<Form version="1.3" maxVersion="1.8" type="org.netbeans.modules.form.forminfo.JInternalFrameFormInfo">
+<Form version="1.5" maxVersion="1.8" type="org.netbeans.modules.form.forminfo.JInternalFrameFormInfo">
   <NonVisualComponents>
     <Menu class="javax.swing.JMenuBar" name="jMenuBar1">
       <SubComponents>
@@ -19,9 +19,9 @@
         <Menu class="javax.swing.JMenu" name="jMenu2">
           <Properties>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="3" name="/imagen/currency_black_dollar.png"/>
+              <Image iconType="3" name="/imagen/List.png"/>
             </Property>
-            <Property name="text" type="java.lang.String" value="Saldo"/>
+            <Property name="text" type="java.lang.String" value="Hoja de Servicios"/>
           </Properties>
         </Menu>
         <Menu class="javax.swing.JMenu" name="jMenu5">
@@ -79,7 +79,7 @@
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" alignment="0" attributes="0">
               <Component id="jPanel1" min="-2" max="-2" attributes="0"/>
-              <EmptySpace min="0" pref="46" max="32767" attributes="0"/>
+              <EmptySpace min="0" pref="50" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -108,11 +108,12 @@
                           <EmptySpace type="separate" max="-2" attributes="0"/>
                           <Component id="dateChooserCombo3" min="-2" pref="134" max="-2" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
-                          <Component id="jLabel4" min="-2" pref="81" max="-2" attributes="0"/>
-                          <EmptySpace min="-2" pref="16" max="-2" attributes="0"/>
+                          <Component id="jLabel4" min="-2" pref="56" max="-2" attributes="0"/>
+                          <EmptySpace type="unrelated" max="-2" attributes="0"/>
                           <Component id="dateChooserCombo4" min="-2" pref="133" max="-2" attributes="0"/>
-                          <EmptySpace max="-2" attributes="0"/>
-                          <Component id="jButton3" pref="149" max="32767" attributes="0"/>
+                          <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                          <Component id="jButton3" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace pref="25" max="32767" attributes="0"/>
                       </Group>
                   </Group>
                   <EmptySpace max="-2" attributes="0"/>
@@ -121,24 +122,31 @@
         </DimensionLayout>
         <DimensionLayout dim="1">
           <Group type="103" groupAlignment="0" attributes="0">
-              <Group type="102" alignment="0" attributes="0">
+              <Group type="102" alignment="1" attributes="0">
                   <EmptySpace max="-2" attributes="0"/>
-                  <Component id="jScrollPane1" min="-2" pref="308" max="-2" attributes="0"/>
-                  <EmptySpace pref="48" max="32767" attributes="0"/>
-                  <Component id="jLabel1" min="-2" pref="18" max="-2" attributes="0"/>
-                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                  <Group type="103" groupAlignment="0" attributes="0">
-                      <Component id="jButton2" min="-2" pref="29" max="-2" attributes="0"/>
-                      <Component id="jTextField1" alignment="0" min="-2" pref="29" max="-2" attributes="0"/>
-                      <Group type="103" alignment="0" groupAlignment="1" attributes="0">
-                          <Component id="jLabel3" alignment="1" min="-2" max="-2" attributes="0"/>
-                          <Component id="dateChooserCombo3" alignment="1" min="-2" max="-2" attributes="0"/>
-                          <Component id="jLabel4" alignment="1" min="-2" max="-2" attributes="0"/>
-                          <Component id="dateChooserCombo4" alignment="1" min="-2" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="1" attributes="0">
+                      <Group type="102" attributes="0">
+                          <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                          <Component id="jButton3" min="-2" pref="39" max="-2" attributes="0"/>
                       </Group>
-                      <Component id="jButton3" alignment="0" min="-2" pref="39" max="-2" attributes="0"/>
+                      <Group type="102" attributes="0">
+                          <Component id="jScrollPane1" min="-2" pref="308" max="-2" attributes="0"/>
+                          <EmptySpace pref="48" max="32767" attributes="0"/>
+                          <Component id="jLabel1" min="-2" pref="18" max="-2" attributes="0"/>
+                          <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Component id="jButton2" min="-2" pref="29" max="-2" attributes="0"/>
+                              <Component id="jTextField1" alignment="0" min="-2" pref="29" max="-2" attributes="0"/>
+                              <Group type="103" alignment="0" groupAlignment="1" attributes="0">
+                                  <Component id="jLabel3" alignment="1" min="-2" max="-2" attributes="0"/>
+                                  <Component id="dateChooserCombo3" alignment="1" min="-2" max="-2" attributes="0"/>
+                                  <Component id="jLabel4" alignment="1" min="-2" max="-2" attributes="0"/>
+                                  <Component id="dateChooserCombo4" alignment="1" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                          </Group>
+                      </Group>
                   </Group>
-                  <EmptySpace min="-2" pref="16" max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="26" max="-2" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -154,24 +162,25 @@
             <Component class="javax.swing.JTable" name="jTable1">
               <Properties>
                 <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
-                  <Connection code="miTabla" type="code"/>
+                  <Connection code="busC" type="code"/>
                 </Property>
               </Properties>
               <AuxValues>
-                <AuxValue name="JavaCodeGenerator_InitCodePost" type="java.lang.String" value="columnaCodigo=this.jTable1.getColumn(&quot;COD CLIENTE&quot;);&#xa;        columnaCodigo.setPreferredWidth(30);"/>
-                <AuxValue name="JavaCodeGenerator_InitCodePre" type="java.lang.String" value="MiModeloTablaArticulos miTabla=new MiModeloTablaArticulos();&#xa;Busquedas bus=new facturacion.clientes.Clientes();&#xa;listadoClientes=bus.listar(&quot;&quot;);&#xa;Iterator listC=listadoClientes.listIterator();&#xa;miTabla.addColumn(&quot;COD CLIENTE&quot;);&#xa;miTabla.addColumn(&quot;RAZON SOCIAL&quot;);&#xa;miTabla.addColumn(&quot;DIRECCION&quot;);&#xa;miTabla.addColumn(&quot;TELEFONO&quot;);&#xa;miTabla.addColumn(&quot;LOCALIDAD&quot;);&#xa;miTabla.addColumn(&quot;CONTACTO&quot;);&#xa;miTabla.addColumn(&quot;CUIT&quot;);&#xa;miTabla.addColumn(&quot;ID IVA&quot;);&#xa;miTabla.addColumn(&quot;COND IVA&quot;);&#xa;Object[] fila=new Object[9];&#xa;facturacion.clientes.Clientes cliente=new facturacion.clientes.Clientes();&#xa;while(listC.hasNext()){&#xa;    cliente=(facturacion.clientes.Clientes)listC.next();&#xa;    fila[0]=cliente.getCodigoId();&#xa;fila[1]=cliente.getRazonSocial();&#xa;fila[2]=cliente.getDireccion();&#xa;fila[3]=cliente.getTelefono();&#xa;fila[4]=cliente.getLocalidad();&#xa;fila[5]=cliente.getResponsable();&#xa;fila[6]=cliente.getNumeroDeCuit();&#xa;fila[7]=cliente.getTipoIva();&#xa;fila[8]=cliente.getCondicionIva();&#xa;miTabla.addRow(fila);&#xa;}"/>
+                <AuxValue name="JavaCodeGenerator_InitCodePost" type="java.lang.String" value="columnaCodigo=this.jTable1.getColumn(&quot;COD CLIENTE&quot;);&#xa;        columnaCodigo.setPreferredWidth(30);&#xa;*/"/>
+                <AuxValue name="JavaCodeGenerator_InitCodePre" type="java.lang.String" value="/*&#xa;MiModeloTablaArticulos miTabla=new MiModeloTablaArticulos();&#xa;Busquedas bus=new facturacion.clientes.Clientes();&#xa;listadoClientes=bus.listar(&quot;&quot;);&#xa;//cargarTabla();&#xa;&#xa;Iterator listC=listadoClientes.listIterator();&#xa;miTabla.addColumn(&quot;COD CLIENTE&quot;);&#xa;miTabla.addColumn(&quot;RAZON SOCIAL&quot;);&#xa;miTabla.addColumn(&quot;DIRECCION&quot;);&#xa;miTabla.addColumn(&quot;TELEFONO&quot;);&#xa;miTabla.addColumn(&quot;LOCALIDAD&quot;);&#xa;miTabla.addColumn(&quot;CONTACTO&quot;);&#xa;miTabla.addColumn(&quot;CUIT&quot;);&#xa;miTabla.addColumn(&quot;ID IVA&quot;);&#xa;miTabla.addColumn(&quot;COND IVA&quot;);&#xa;Object[] fila=new Object[9];&#xa;facturacion.clientes.Clientes cliente=new facturacion.clientes.Clientes();&#xa;while(listC.hasNext()){&#xa;    cliente=(facturacion.clientes.Clientes)listC.next();&#xa;    fila[0]=cliente.getCodigoId();&#xa;fila[1]=cliente.getRazonSocial();&#xa;fila[2]=cliente.getDireccion();&#xa;fila[3]=cliente.getTelefono();&#xa;fila[4]=cliente.getLocalidad();&#xa;fila[5]=cliente.getResponsable();&#xa;fila[6]=cliente.getNumeroDeCuit();&#xa;fila[7]=cliente.getTipoIva();&#xa;fila[8]=cliente.getCondicionIva();&#xa;miTabla.addRow(fila);&#xa;}"/>
               </AuxValues>
             </Component>
           </SubComponents>
         </Container>
         <Component class="javax.swing.JLabel" name="jLabel1">
           <Properties>
-            <Property name="text" type="java.lang.String" value="Buscar por Nombre - Contacto - Nombre de Fantas&#xed;a"/>
+            <Property name="text" type="java.lang.String" value="Buscar por Nombre - Contacto - direccion  Presione F1 para buscar"/>
           </Properties>
         </Component>
         <Component class="javax.swing.JTextField" name="jTextField1">
           <Events>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jTextField1ActionPerformed"/>
+            <EventHandler event="keyPressed" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="jTextField1KeyPressed"/>
           </Events>
         </Component>
         <Component class="javax.swing.JButton" name="jButton2">

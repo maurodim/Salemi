@@ -324,7 +324,7 @@ public class Inicio extends javax.swing.JFrame {
         jMenu3.add(jMenuItem5);
 
         jMenuItem22.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagen/List.png"))); // NOI18N
-        jMenuItem22.setText("Cotizaciones");
+        jMenuItem22.setText("Hoja de Servicios");
         jMenuItem22.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jMenuItem22ActionPerformed(evt);

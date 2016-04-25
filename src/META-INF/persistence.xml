@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence version="2.1" xmlns="http://xmlns.jcp.org/xml/ns/persistence" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence http://xmlns.jcp.org/xml/ns/persistence/persistence_2_1.xsd">
+  <persistence-unit name="SalemiGestionPU" transaction-type="RESOURCE_LOCAL">
+    <provider>org.eclipse.persistence.jpa.PersistenceProvider</provider>
+    <class>entity.Proveedores</class>
+    <class>entity.Detallerecibos</class>
+    <class>entity.Movimientosproveedores</class>
+    <class>entity.Detallefacturas</class>
+    <class>entity.Movimientosdesucursales</class>
+    <class>entity.Clientes</class>
+    <class>entity.Movimientoscaja</class>
+    <class>entity.Movimientosarticulos</class>
+    <class>entity.Recibos</class>
+    <class>entity.Facturas</class>
+    <class>entity.Pedidos</class>
+    <class>entity.Movimientosusuarios</class>
+    <class>entity.Cheques</class>
+    <class>entity.Movimientosgastosfijos</class>
+    <class>entity.Coeficienteslistas</class>
+    <class>entity.Detalleremitos</class>
+    <class>entity.Cotizaciones</class>
+    <class>entity.Remitos</class>
+    <class>entity.Formasdepago</class>
+    <class>entity.Localidades</class>
+    <class>entity.Tipoacceso</class>
+    <class>entity.Rubros</class>
+    <class>entity.Condicionesiva</class>
+    <class>entity.Articulos</class>
+    <class>entity.Tipocomprobantes</class>
+    <class>entity.Facturaelectronica</class>
+    <class>entity.Billetes</class>
+    <class>entity.Sucursal</class>
+    <class>entity.Tipomovimientos</class>
+    <class>entity.Movimientosclientes</class>
+    <class>entity.Comprobantes</class>
+    <class>entity.Relaciones</class>
+    <class>entity.Tipos</class>
+    <class>entity.Caja</class>
+    <class>entity.Depositos</class>
+    <class>entity.Subrubros</class>
+    <class>entity.Fallas</class>
+    <class>entity.Usuarios</class>
+    <class>entity.Detallepedidos</class>
+    <class>entity.Detallecotizaciones</class>
+    <properties>
+      <property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/salemi?zeroDateTimeBehavior=convertToNull"/>
+      <property name="javax.persistence.jdbc.password" value="mauro"/>
+      <property name="javax.persistence.jdbc.driver" value="com.mysql.jdbc.Driver"/>
+      <property name="javax.persistence.jdbc.user" value="mauro"/>
+    </properties>
+  </persistence-unit>
+</persistence>
