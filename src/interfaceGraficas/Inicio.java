@@ -264,6 +264,7 @@ public class Inicio extends javax.swing.JFrame {
 
         jMenuBar1.add(jMenu1);
 
+        jMenu7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagen/tractorunitblack.png"))); // NOI18N
         jMenu7.setText("Servicios");
 
         jMenuItem22.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagen/List.png"))); // NOI18N
@@ -276,7 +277,7 @@ public class Inicio extends javax.swing.JFrame {
         jMenu7.add(jMenuItem22);
 
         jMenuItem11.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagen/Task.png"))); // NOI18N
-        jMenuItem11.setText("Ingreso de Pedidos");
+        jMenuItem11.setText("Solicitud de Servicios");
         jMenuItem11.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jMenuItem11ActionPerformed(evt);
