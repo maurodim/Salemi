@@ -927,14 +927,14 @@ public class Articulos implements Facturar,Editables,Comparables,Modificable{
     }
 
     @Override
-    public Boolean AltaObjeto(Object objeto) {
+    public Integer AltaObjeto(Object objeto) {
         Articulos articulo=(Articulos)objeto;
-        Boolean ch=false;
+        Integer ch=0;
         //String sql="insert into articulos (NOMBRE='"+articulo.getDescripcionArticulo()+"',SERVICIO="+articulo.getPrecioServicio()+",COSTO="+articulo.getPrecioDeCosto()+",PRECIO="+articulo.getPrecioUnitarioNeto()+",MINIMO="+articulo.getStockMinimo()+",BARRAS ='"+articulo.getCodigoDeBarra()+"',modificaPrecio="+articulo.getModificaPrecio()+" where ID="+articulo.getNumeroId();
         String sql="insert into articulos (NOMBRE,SERVICIO,COSTO,PRECIO,MINIMO,BARRAS,SERVICIO1,idcombo,actualizacion,idrubro,idsubrubro) values ('"+articulo.getDescripcionArticulo()+"',"+articulo.getPrecioServicio()+","+articulo.getPrecioDeCosto()+","+articulo.getPrecioUnitarioNeto()+","+articulo.getStockMinimo()+",'"+articulo.getCodigoDeBarra()+"',"+articulo.getPrecioServicio1()+","+articulo.getIdCombo()+",3,"+articulo.getRubroId()+","+articulo.getIdSubRubro()+")";
         System.out.println(sql);
         Transaccionable tra=new Conecciones();
-        ch=tra.guardarRegistro(sql);
+        tra.guardarRegistro(sql);
         sql="select last_insert_id()";
         ResultSet rs=tra.leerConjuntoDeRegistros(sql);
         Integer ultimoArt=0;
@@ -957,7 +957,7 @@ public class Articulos implements Facturar,Editables,Comparables,Modificable{
                 tra.guardarRegistro(sql);
             }
         }
-        
+        ch=ultimoArt;
         return ch;
     }
 

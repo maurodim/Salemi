@@ -119,9 +119,9 @@ public class ListasDePrecios implements Editables{
     }
 
     @Override
-    public Boolean AltaObjeto(Object objeto) {
+    public Integer AltaObjeto(Object objeto) {
         ListasDePrecios listaDePrecios=(ListasDePrecios)objeto;
-        Boolean verif=true;
+        Integer verif=0;
         Transaccionable tra=new Conecciones();
         Double coe=listaDePrecios.getCoeficiente() / 100;
         coe=coe + 1;

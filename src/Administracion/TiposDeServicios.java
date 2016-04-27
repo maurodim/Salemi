@@ -9,6 +9,7 @@ import interfaces.Componable;
 import interfaces.Editables;
 import java.util.ArrayList;
 import javax.swing.ComboBoxModel;
+import javax.swing.DefaultComboBoxModel;
 import javax.swing.DefaultListModel;
 import javax.swing.table.DefaultTableModel;
 
@@ -71,7 +72,7 @@ public class TiposDeServicios implements Componable,Editables{
     }
 
     @Override
-    public Boolean AltaObjeto(Object objeto) {
+    public Integer AltaObjeto(Object objeto) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
@@ -92,6 +93,11 @@ public class TiposDeServicios implements Componable,Editables{
 
     @Override
     public ArrayList ListarPorSucursal(Object objeto) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public DefaultComboBoxModel LlenarComboConArray(ArrayList listado) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
     
