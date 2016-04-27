@@ -177,7 +177,6 @@ public class ListadoDePedidosParaReparto extends javax.swing.JInternalFrame {
         });
         jScrollPane2.setViewportView(jTable2);
 
-        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/iconos/logo.png")));
         jButton1.setText("Guardar Seleccion");
         jButton1.setToolTipText("Almacena los pedidos señalado para el vehiculo marcado");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
@@ -205,7 +204,6 @@ public class ListadoDePedidosParaReparto extends javax.swing.JInternalFrame {
         });
         jScrollPane1.setViewportView(jTable1);
 
-        jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/iconos/logo.png")));
         jButton2.setText("Ver Carga");
         jButton2.setToolTipText("Muestra la carga asignada al vehiculo señalado");
         jButton2.addActionListener(new java.awt.event.ActionListener() {
@@ -214,7 +212,6 @@ public class ListadoDePedidosParaReparto extends javax.swing.JInternalFrame {
             }
         });
 
-        jButton3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/iconos/logo.png")));
         jButton3.setText("Modificar Pedido");
         jButton3.setToolTipText("Permite modificar el pedido señalado");
         jButton3.addActionListener(new java.awt.event.ActionListener() {
@@ -223,7 +220,6 @@ public class ListadoDePedidosParaReparto extends javax.swing.JInternalFrame {
             }
         });
 
-        jButton4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/iconos/logo.png")));
         jButton4.setText("Consultar Saldo ");
         jButton4.setToolTipText("Muestra el Saldo actual (según base Tango) del cliente marcado");
         jButton4.addActionListener(new java.awt.event.ActionListener() {
@@ -254,7 +250,6 @@ public class ListadoDePedidosParaReparto extends javax.swing.JInternalFrame {
 
         jComboBox1.setToolTipText("Listado de Zonas establecidas en los recorridos");
 
-        jButton5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/iconos/logo.png")));
         jButton5.setText("Filtrar P/Zona");
         jButton5.setToolTipText("muestra el listado de pedidos correspondientes a la zona seleccionada");
         jButton5.addActionListener(new java.awt.event.ActionListener() {
@@ -271,7 +266,6 @@ public class ListadoDePedidosParaReparto extends javax.swing.JInternalFrame {
             }
         });
 
-        jButton7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/iconos/logo.png")));
         jButton7.setText("Anular LPM´S");
         jButton7.setToolTipText("Lista y permite la anulación de los LPM emitidos en la fecha");
         jButton7.addActionListener(new java.awt.event.ActionListener() {
