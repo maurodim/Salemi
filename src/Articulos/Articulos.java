@@ -1074,8 +1074,8 @@ public class Articulos implements Facturar,Editables,Comparables,Modificable{
     }
 
     @Override
-    public ArrayList ListarPorSucursal(Object objeto) {
-        Articulos articulo=(Articulos)objeto;
+    public ArrayList ListarPorSucursal() {
+        Articulos articulo=new Articulos();
         Articulos articuloI;
         ArrayList listado=new ArrayList();
         String sql="select sum(cantidad),idArticulo,numeroDeposito FROM movimientosarticulos where idArticulo="+String.valueOf(articulo.getCodigoAsignado())+" group by idArticulo,numeroDeposito";

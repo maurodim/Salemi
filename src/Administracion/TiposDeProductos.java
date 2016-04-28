@@ -91,7 +91,7 @@ public class TiposDeProductos implements Componable,Editables{
     }
 
     @Override
-    public ArrayList ListarPorSucursal(Object objeto) {
+    public ArrayList ListarPorSucursal() {
         ArrayList listado=new ArrayList();
         sql="select * from tipoproductos order by descripcion";
         ResultSet rs=tra.leerConjuntoDeRegistros(sql);

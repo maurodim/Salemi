@@ -17,10 +17,9 @@ import javax.swing.table.DefaultTableModel;
  *
  * @author mauro
  */
-public class TiposDeServicios implements Componable,Editables{
+public class Destinos implements Componable,Editables{
     private Integer id;
     private String descripcion;
-    private Integer superior;
 
     public Integer getId() {
         return id;
@@ -36,14 +35,6 @@ public class TiposDeServicios implements Componable,Editables{
 
     public void setDescripcion(String descripcion) {
         this.descripcion = descripcion;
-    }
-
-    public Integer getSuperior() {
-        return superior;
-    }
-
-    public void setSuperior(Integer superior) {
-        this.superior = superior;
     }
 
     @Override
@@ -72,6 +63,11 @@ public class TiposDeServicios implements Componable,Editables{
     }
 
     @Override
+    public DefaultComboBoxModel LlenarComboConArray(ArrayList listado) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
     public Integer AltaObjeto(Object objeto) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
@@ -93,11 +89,6 @@ public class TiposDeServicios implements Componable,Editables{
 
     @Override
     public ArrayList ListarPorSucursal() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    @Override
-    public DefaultComboBoxModel LlenarComboConArray(ArrayList listado) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
     

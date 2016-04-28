@@ -98,7 +98,7 @@ public class Mecanicos implements Componable,Editables{
     }
 
     @Override
-    public ArrayList ListarPorSucursal(Object objeto) {
+    public ArrayList ListarPorSucursal() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 

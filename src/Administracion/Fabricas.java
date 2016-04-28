@@ -116,7 +116,7 @@ public class Fabricas implements Componable,Editables{
     }
 
     @Override
-    public ArrayList ListarPorSucursal(Object objeto) {
+    public ArrayList ListarPorSucursal() {
         ArrayList listado=new ArrayList();
         sql="select * from fabricas order by nombre";
         ResultSet rs=tra.leerConjuntoDeRegistros(sql);

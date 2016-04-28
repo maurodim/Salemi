@@ -15,5 +15,5 @@ public interface Editables {
     public Boolean ModificaionObjeto(Object objeto);
     public Boolean EliminacionDeObjeto(Object objeto);
     public Boolean MovimientoDeAjusteDeCantidades(Object objeto,Double cantidadMovimiento,String observaciones);
-    public ArrayList ListarPorSucursal(Object objeto);
+    public ArrayList ListarPorSucursal();
 }
