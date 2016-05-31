@@ -61,4 +61,19 @@ public class Numeros {
         Double dd=Double.parseDouble(num);
         return dd;
     }
+    public static String ConvertirFechaLeidaDeDateChooser(Calendar dateC){
+        DecimalFormat fr=new DecimalFormat("00");
+        DecimalFormat formato=new DecimalFormat("####.####");
+        //SiderconCapaatos.listaPedidos.clear();
+        SimpleDateFormat dia=new SimpleDateFormat("dd/mm/yyyy");
+        //Date mes=Calendar.getInstance().getTime();
+        //dateChooserCombo1.setDateFormat(dia);
+        Calendar fechaNueva=dateC;
+        int ano=fechaNueva.get(Calendar.YEAR);
+        int mes=fechaNueva.get(Calendar.MONTH);
+        mes++;
+        int dd=fechaNueva.get(Calendar.DAY_OF_MONTH);
+        String fecha1=ano+"-"+mes+"-"+dd;
+        return fecha1;
+    }
 }
