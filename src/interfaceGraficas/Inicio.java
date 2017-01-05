@@ -190,6 +190,7 @@ public class Inicio extends javax.swing.JFrame {
         jMenuItem3 = new javax.swing.JMenuItem();
         jMenuItem4 = new javax.swing.JMenuItem();
         jMenu4 = new javax.swing.JMenu();
+        jMenuItem18 = new javax.swing.JMenuItem();
         jMenu6 = new javax.swing.JMenu();
         jMenu5 = new javax.swing.JMenu();
         jMenuItem15 = new javax.swing.JMenuItem();
@@ -412,6 +413,10 @@ public class Inicio extends javax.swing.JFrame {
                 jMenu4ActionPerformed(evt);
             }
         });
+
+        jMenuItem18.setText("Reposicion de mercaderia");
+        jMenu4.add(jMenuItem18);
+
         jMenuBar1.add(jMenu4);
 
         jMenu6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagen/groups_black.png"))); // NOI18N
@@ -812,6 +817,7 @@ public class Inicio extends javax.swing.JFrame {
     private javax.swing.JMenuItem jMenuItem15;
     private javax.swing.JMenuItem jMenuItem16;
     private javax.swing.JMenuItem jMenuItem17;
+    private javax.swing.JMenuItem jMenuItem18;
     private javax.swing.JMenuItem jMenuItem2;
     private javax.swing.JMenuItem jMenuItem21;
     private javax.swing.JMenuItem jMenuItem22;
